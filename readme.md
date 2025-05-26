@@ -47,14 +47,15 @@ You can adapt this multi-agent project planner for other enterprise reporting in
   - Complexity tiers (low, medium, high)  
   - Cost structure (weekly FTE rates per role)  
   - Phase constraints and stakeholder checkpoints
-- **Where to Find in Notebook**:  
-  Typically defined in a variable like `context_dict` or `project_requirements` near the start of the notebook.
+- **Where to Find in Notebook**
+ ` ComplexPMOViz.ipynb`
+  Project inputs defined in a variables  `inputs ` or `project_requirements` near the start of the notebook.
 
 ---
 
-### 4. 📊 Final Results
+### 4. Final Results
 - **Location in Notebook**:  
-  Scroll down to the section titled `## Generate and Visualize All Scenarios`.
+  Scroll down to the section titled `## result = creewai.kickoff(inputs = inputs)`.
 - **What You’ll See**:
   - Project duration (per scenario)
   - FTEs by role
