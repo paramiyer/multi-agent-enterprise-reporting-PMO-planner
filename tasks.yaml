@@ -1,0 +1,89 @@
+requirement_analysis:
+  description: >
+    Estimate the business analysis effort required to develop a KPI catalog.
+    Use inputs like project_requirements and project_objectives to identify stakeholders,
+    map data sources, and define documentation needs. Factor in number of dashboard count
+    and break up of complexity levels provided in requirements.
+  expected_output: >
+    Detailed breakdown of business analysis efforts for stakeholder mapping, data source review,
+    and KPI documentation aligned with project objectives and complexity tiers.
+  async_execution: false
+
+design:
+  description: >
+    Estimate the UX and design effort needed to convert KPI requirements into usable dashboards.
+    Base effort on user personas and the complexity of 5 dashboards (2 low, 2 medium, 1 high).
+  expected_output: >
+    UX effort estimation including wireframes, visual layout plans, persona coverage,
+    and feedback loops tailored to dashboard complexity.
+  async_execution: false
+
+development:
+  description: >
+    Estimate the development workload to build and integrate dashboards and KPIs.
+    Use number of dashboards break up of complexity levels provided in requirements and collaborate with data engineering and QA.
+  expected_output: >
+    Development effort plan by complexity, covering frontend/backend tasks, KPI integration,
+    and interaction with UX and QA streams.
+  async_execution: false
+
+data_engineering:
+  description: >
+    Estimate the data engineering effort needed to support KPI computation and dashboard consumption.
+    Include ETL pipeline work, validation, and support activities for the number of dashboards and complexity levels provided in the requirements.
+  expected_output: >
+    Structured data engineering effort estimate including pipeline build, transformation logic,
+    validation checkpoints, and ongoing support timelines.
+  async_execution: false
+
+qa:
+  description: >
+    Estimate QA effort to validate all dashboards for functionality, accuracy, performance, and user feedback.
+    Structure effort based on break up of number of dashboards and complexity levels provided in requirements and relevant user personas.
+  expected_output: >
+    QA effort estimate with breakdown across functionality, data validation, performance testing,
+    usability checks, and UAT coordination based on complexity.
+  async_execution: false
+
+deployment:
+  description: >
+    Estimate deployment and enablement effort including access setup, training, documentation,
+    and post-rollout support. Base estimates on rollout plans, stakeholder adoption goals,
+    and for the number of dashboards and complexity levels provided in the requirements across business units.
+  expected_output: >
+    Deployment work plan with estimated effort for provisioning, documentation,
+    user training, and post-rollout user engagement.
+  async_execution: false
+
+resource_estimation:
+  description: >
+    Generate four complete delivery scenarios using the effort estimates from all domain agents.
+
+    Constraints:
+      - Preserve domain-level effort; redistribute effort only within domains by adding additional resources to reduce timelines.
+      - Maintain strict sequential phase order: KPI Cataloging → UX Design → Data Engineering → Development → QA → Deployment.
+      - Ensure each phase begins only after stakeholder alignment for the previous phase.
+      - Plan for the number of dashboards and their complexity tiers as provided in the requirements.
+      - Use the provided {cost_structure} to calculate final cost using the formula:
+        final_cost = sum of (effort in person-weeks for each role × cost per week for that role).
+
+    Scenario logic:
+      - Scenario A: Max cost, min timeline (aggressive resourcing)
+      - Scenario B: Min cost, max timeline (minimal team configuration)
+      - Scenario C1: Medium timeline and cost (UX & Data Engineering overlap)
+          - Ensure cost is higher than Scenario B but lower than Scenario A unless scope increases.
+      - Scenario C2: Medium timeline and cost (Dev & QA overlap)
+          - Ensure cost is higher than Scenario B but lower than Scenario A unless scope increases.
+
+  expected_output: >
+    For each of the 4 scenarios:
+      - Project duration (weeks)
+      - Role-wise FTE distribution
+      - Total effort (person-weeks) – must match total domain effort
+      - Final cost – calculated using the provided cost structure
+      - Milestone and sprint plan
+      - Stakeholder checkpoint details
+      - Risks, tradeoffs, and mitigations
+      - Gantt chart as a Markdown table (week × phase view)
+
+  async_execution: true
