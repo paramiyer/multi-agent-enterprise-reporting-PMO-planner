@@ -1,4 +1,4 @@
-# Complex PMO Visualization with Multi-Agent AI Planning
+# Complex PMO Planning with Multi-Agent AI Orchestration
 
 This Jupyter Notebook demonstrates a multi-agent AI-based orchestration system to generate enterprise-level KPI dashboard delivery scenarios.
 
